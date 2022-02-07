@@ -77,4 +77,14 @@ body {
     position: relative;
     padding: 0.5rem;
   }
+
+  .trashbin {
+    
+        text-align: left;
+        position: absolute;
+        padding: 0rem;
+        margin-left: 8px;
+        color: #6ea0fd;
+      
+  }
   
