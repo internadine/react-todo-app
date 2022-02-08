@@ -13,6 +13,14 @@ function App() {
 
     }
 
+    function deleteToDo(id) {
+        setList(prevValue => {
+            return prevValue.filter((item, index) => {
+                return id != index
+            })
+        })
+    }
+
     return <div className="container">
         <div className="heading">
             <h1>Nadine's ToDo's</h1>
@@ -20,7 +28,7 @@ function App() {
         <Input onAdd={addToDo} />
         <div><ul>
             {list.map((item, index) => {
-                return <List todo={item} key={index} />
+                return <List todo={item} key={index} id={index} toTrash={deleteToDo} />
             })}
 
 

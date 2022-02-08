@@ -9,8 +9,11 @@ function List(props) {
             return prevValue = !prevValue
         })
     }
+    function onTrash() {
+        props.toTrash(props.id)
+    }
 
-    return <div><li onClick={handleClick} style={{ textDecoration: done ? 'line-through' : 'none' }}>{props.todo} {done ? <DeleteIcon className="trashbin"></DeleteIcon> : null}</li>
+    return <div><li onClick={handleClick} style={{ textDecoration: done ? 'line-through' : 'none' }}>{props.todo} {done ? <DeleteIcon onClick={onTrash} className="trashbin"></DeleteIcon> : null}</li>
     </div>
 }
 
